@@ -1,6 +1,9 @@
 <html>
 <head>
     <title>{{title}}</title>
+    
+    <!--link css-->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 
@@ -9,5 +12,13 @@
     {% for link, name in nav %}
     <a href="{{link}}">{{name}}</a>
     {% endfor %}
+
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <button type="submit">Simpan</button>
+    </form>
 </body>
 </html>
